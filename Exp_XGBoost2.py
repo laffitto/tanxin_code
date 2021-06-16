@@ -24,8 +24,8 @@ def exp1():
     # 算法参数
     params = {
         'booster': 'gbtree',
-        'objective': 'multi:softprob',
-        # 'objective': 'multi:softmax',
+        # 'objective': 'multi:softprob',
+        'objective': 'multi:softmax',
         'num_class': 3,
         'gamma': 0.1,
         'max_depth': 6,
@@ -41,8 +41,8 @@ def exp1():
 
     plst = list(params.items())
     dtrain = xgb.DMatrix(X_train, y_train) # 生成数据集格式
-    # num_rounds = 500
-    num_rounds = 1
+    num_rounds = 500
+    # num_rounds = 1
     # num_rounds = 2
     model = xgb.train(plst, dtrain, num_rounds) # xgboost模型训练
 
@@ -55,8 +55,8 @@ def exp1():
     plt.show()
 
     # 计算准确率
-    # accuracy = accuracy_score(y_test,y_pred)
-    # print("accuarcy: %.2f%%" % (accuracy*100.0))
+    accuracy = accuracy_score(y_test,y_pred)
+    print("accuarcy: %.2f%%" % (accuracy*100.0))
 
     # 显示XGBoost学到的第几颗树
     if plot_DT is True:
@@ -84,7 +84,7 @@ def softmax(W):
 
 def main():
     exp1()
-    val()
+    # val()
 
 if __name__ == "__main__":
     t_start = time.time()

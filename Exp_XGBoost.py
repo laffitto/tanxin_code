@@ -157,9 +157,9 @@ def exp4():
 
 def main():
     exp1()
-    exp2()
-    exp3()
-    exp4()
+    # exp2()
+    # exp3()
+    # exp4()
 
 if __name__ == "__main__":
     t_start = time.time()
